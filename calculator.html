@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор Сложного Процента | Рассчитай свой капитал</title>
+    <meta name="description" content="Бесплатный калькулятор сложного процента. Узнай, сколько ты заработаешь на инвестициях.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="calculator-page">
+    <!-- НАВИГАЦИЯ -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-link">← На главную</a>
+        <div class="nav-title">Калькулятор Инвестиций</div>
+    </nav>
+
+    <div class="calculator-wrapper">
+        <div class="calculator-container">
+            <header class="calculator-header">
+                <h1>🧮 Калькулятор сложного процента</h1>
+                <p class="subtitle">Посчитай, во что превратятся твои инвестиции</p>
+            </header>
+
+            <!-- ПОЛЯ ВВОДА -->
+            <div class="inputs">
+                <div class="input-group">
+                    <label>Начальная сумма (₽)</label>
+                    <input type="number" id="initialAmount" value="100000" min="0" step="10000">
+                    <input type="range" id="initialRange" min="0" max="1000000" step="10000" value="100000">
+                </div>
+
+                <div class="input-group">
+                    <label>Ежемесячное пополнение (₽)</label>
+                    <input type="number" id="monthlyAdd" value="10000" min="0" step="1000">
+                    <input type="range" id="monthlyRange" min="0" max="100000" step="1000" value="10000">
+                </div>
+
+                <div class="input-group">
+                    <label>Годовая доходность (%)</label>
+                    <input type="number" id="annualRate" value="15" min="1" max="50" step="0.5">
+                    <input type="range" id="rateRange" min="1" max="50" step="0.5" value="15">
+                    <small>Средняя доходность рынка: 12-18% годовых</small>
+                </div>
+
+                <div class="input-group">
+                    <label>Срок инвестирования (лет)</label>
+                    <input type="number" id="years" value="20" min="1" max="50" step="1">
+                    <input type="range" id="yearsRange" min="1" max="50" step="1" value="20">
+                </div>
+            </div>
+
+            <!-- РЕЗУЛЬТАТЫ -->
+            <div class="results">
+                <div class="result-card main">
+                    <span class="label">Итоговый капитал:</span>
+                    <span class="value" id="finalAmount">0 ₽</span>
+                </div>
+                
+                <div class="result-row">
+                    <div class="result-card">
+                        <span class="label">Всего вложено:</span>
+                        <span class="value" id="totalInvested">0 ₽</span>
+                    </div>
+                    <div class="result-card">
+                        <span class="label">Заработано процентами:</span>
+                        <span class="value profit" id="totalProfit">0 ₽</span>
+                    </div>
+                </div>
+
+                <div class="result-card passive">
+                    <span class="label">Пассивный доход в месяц (при 4% изъятии):</span>
+                    <span class="value" id="passiveIncome">0 ₽</span>
+                </div>
+            </div>
+
+            <!-- ГРАФИК -->
+            <div class="chart-container">
+                <h3>📈 Рост капитала по годам</h3>
+                <div class="chart" id="chart"></div>
+                <div class="chart-legend">
+                    <span><span class="legend-color invested"></span> Вложено</span>
+                    <span><span class="legend-color profit"></span> Прибыль</span>
+                </div>
+            </div>
+
+            <!-- ПАРТНЁРСКАЯ ССЫЛКА -->
+            <div class="affiliate-block">
+                <h3>🚀 Хочешь начать инвестировать?</h3>
+                <p>Открой брокерский счёт за 5 минут и получи портфель готовых идей</p>
+                
+                <!-- ВСТАВЬ СЮДА СВОЮ ПАРТНЁРСКУЮ ССЫЛКУ -->
+                <a href="#" target="_blank" class="cta-button" id="affiliateLink" 
+                   onclick="ym(YOUR_METRIKA_ID, 'reachGoal', 'affiliate_click'); return true;">
+                    Открыть счёт бесплатно и получить бонус →
+                </a>
+                <small>Реклама. Не является индивидуальной инвестиционной рекомендацией.</small>
+            </div>
+
+            <!-- МЕСТО ДЛЯ РЕКЛАМЫ ЯНДЕКС РСЯ -->
+            <div class="ad-container">
+                <div id="yandex-ads-calculator" class="yandex-ad-block">
+                    <!-- Сюда вставишь код РСЯ -->
+                    <p class="ad-placeholder">Реклама Яндекс РСЯ</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ДИСКЛЕЙМЕР -->
+    <footer class="disclaimer-footer">
+        <p>
+            <strong>Дисклеймер:</strong> Информация на сайте носит ознакомительный характер 
+            и не является индивидуальной инвестиционной рекомендацией.
+        </p>
+        <p class="footer-links">
+            <a href="index.html">На главную</a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
